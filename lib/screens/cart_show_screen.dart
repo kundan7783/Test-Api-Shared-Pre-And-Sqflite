@@ -15,9 +15,9 @@ class _CartShowScreenState extends State<CartShowScreen> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() =>
-        Provider.of<CartsApiProvider>(context, listen: false).getDataFromApi());
+    Provider.of<CartsApiProvider>(context, listen: false).getDataFromApi();
   }
+
   @override
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
@@ -71,7 +71,6 @@ class _CartShowScreenState extends State<CartShowScreen> {
                             ),
                             const SizedBox(height: 10),
 
-
                             SizedBox(
                               height: 60,
                               child: ListView.builder(
@@ -87,7 +86,8 @@ class _CartShowScreenState extends State<CartShowScreen> {
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Text("PID: ${product.productId}"),
                                         Text("Qty: ${product.quantity}"),

@@ -33,9 +33,9 @@ class AuthProvider with ChangeNotifier {
 
   getUserAuthProvider() async {
     var getUser = await SharedPre.getUserFromSharedPre();
-    name = getUser["getName"];
-    email = getUser["getEmail"];
-    password = getUser["getPassword"];
+    name = getUser["getName"] ?? "";
+    email = getUser["getEmail"] ?? "";
+    password = getUser["getPassword"] ?? "";
     notifyListeners();
   }
 
